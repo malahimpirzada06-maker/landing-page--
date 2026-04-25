@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Cormorant Garamond", serif;
+  
+  --color-beige: #F5F5DC;
+  --color-moss-green: #4A5D23;
+  --color-dark-green: #3a4a1c;
+  --color-mid-green: #5a6d33;
+}
+
+:root {
+  --beige: #F5F5DC;
+  --moss-green: #4A5D23;
+}
+
+body {
+  background-color: var(--beige);
+  color: #2B2B2B;
+  font-family: var(--font-body);
+  font-style: italic;
+  @apply selection:bg-moss-green selection:text-white;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--moss-green);
+}
+
+/* Premium Grain Overlay */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.cta-shadow {
+  box-shadow: 0 10px 15px -3px rgba(74, 93, 35, 0.1), 0 4px 6px -2px rgba(74, 93, 35, 0.05);
+}
+
+.sleek-shadow {
+  box-shadow: 0 25px 50px -12px rgba(74, 93, 35, 0.1);
+}
+
+.testimonial-shadow {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
